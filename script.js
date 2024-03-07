@@ -16,7 +16,7 @@ let dado=6;
 let verbose=0; //verbose: flag per controllo e stampa risultati singoli nella console 1=on 0=0ff 
 
 let roll = 2;
-// let roll = prompt("INIZIA LA PARTITA\n inserisci il numero di dadi da tirare."); 
+// let roll = parseInt(prompt("INIZIA LA PARTITA\n inserisci il numero di dadi da tirare.")); 
 
 function rollDice(v=0,rolls = 1, die = 6) { 
     let diceSum = 0;
