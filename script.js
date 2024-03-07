@@ -13,9 +13,9 @@
 let playerN1 = "Marco";
 let playerN2 = "Simone";
 let dado=6;
-let roll = 2;
 let verbose=0; //verbose: flag per controllo e stampa risultati singoli nella console 1=on 0=0ff 
 
+let roll = 2;
 // let roll = prompt("INIZIA LA PARTITA\n inserisci il numero di dadi da tirare."); 
 
 function rollDice(v=0,rolls = 1, die = 6) { 
@@ -120,15 +120,15 @@ printNumber(num);
 
 
 function countDigits(num) {
-    num = Math.floor(num)+ '';
+    num = Math.floor(num)+ ''; //trasformo il num in un intero se non lo è e poi lo converto in una stringa
     // console.log(typeof (num));
-    let digit = num.length;
+    let digit = num.length; //conto i caratteri della stringa
     if (digit > 4) {
         return "Numero troppo grande";
     }
    
     else if(digit==1) {
-        return digit+" cifra";
+        return digit+" cifra"; 
     }
     else{
         return digit+ " cifre"
