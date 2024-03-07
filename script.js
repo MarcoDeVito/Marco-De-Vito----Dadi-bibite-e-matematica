@@ -14,7 +14,7 @@ let playerN1 = "Marco";
 let playerN2 = "Simone";
 let dado=6;
 let roll = 2;
-let verbose=1; //verbose: flag per controllo e stampa risultati singoli nella console 1=on 0=0ff 
+let verbose=0; //verbose: flag per controllo e stampa risultati singoli nella console 1=on 0=0ff 
 
 // let roll = prompt("INIZIA LA PARTITA\n inserisci il numero di dadi da tirare."); 
 
@@ -121,12 +121,17 @@ printNumber(num);
 
 function countDigits(num) {
     num = Math.floor(num)+ '';
-    console.log(typeof (num));
+    // console.log(typeof (num));
     let digit = num.length;
     if (digit > 4) {
         return "Numero troppo grande";
-    } else {
-        return digit;
+    }
+   
+    else if(digit==1) {
+        return digit+" cifra";
+    }
+    else{
+        return digit+ " cifre"
     }
 
 
@@ -135,7 +140,12 @@ function countDigits(num) {
 // let countDigits = (num) => (num+'').length;
 
 
+console.log(countDigits(1));
 console.log(countDigits(10));
+console.log(countDigits(100));
+console.log(countDigits(1000));
+console.log(countDigits(10000));
+
 
 
 // Traccia 4:
@@ -149,38 +159,38 @@ console.log(countDigits(10));
 
 // P.S. Provate poi a riscrivere le funzioni, degli esercizi precedenti, utilizzando la sintassi dell'Arrow function! 🚀
 
-// function distributore(array) {
-//     do {
-//         sceltaBevanda = prompt(`Buongiorno che bevanda desidera:\n (1) ${array[0]}:${array[1]}\n (2) ${array[2]}:${array[3]}\n (3) ${array[4]}:${array[5]}`) 
-//         switch (sceltaBevanda) {
-//             case "1":
-//                 alert(`E' stata selezionata ${array[0]}`);
-//                 array[1] != 0 ? array[1]-- : alert("siamo spiacenti l'oggetto richiesto è Terminato")
-//                 break;
-//             case "2":
-//                 alert(`E' stata selezionata ${array[2]}`);
-//                 array[3] != 0 ? array[3]-- : alert("siamo spiacenti l'oggetto richiesto è Terminato")
-//                 break;
-//             case "3":
-//                 alert(`E' stata selezionata ${array[4]}`);
-//                 array[5] != 0 ? array[5]-- : alert("siamo spiacenti l'oggetto richiesto è Terminato")
-//                 break;
+function distributore(array) {
+    do {
+        sceltaBevanda = prompt(`Buongiorno che bevanda desidera:\n (1) ${array[0]}:${array[1]}\n (2) ${array[2]}:${array[3]}\n (3) ${array[4]}:${array[5]}`) 
+        switch (sceltaBevanda) {
+            case "1":
+                alert(`E' stata selezionata ${array[0]}`);
+                array[1] != 0 ? array[1]-- : alert("siamo spiacenti l'oggetto richiesto è Terminato")
+                break;
+            case "2":
+                alert(`E' stata selezionata ${array[2]}`);
+                array[3] != 0 ? array[3]-- : alert("siamo spiacenti l'oggetto richiesto è Terminato")
+                break;
+            case "3":
+                alert(`E' stata selezionata ${array[4]}`);
+                array[5] != 0 ? array[5]-- : alert("siamo spiacenti l'oggetto richiesto è Terminato")
+                break;
 
-//             default:
-//                 sceltaBevanda = "error" //default per rimanere nel ciclo
-//                 break;
-//         }
-//     } while (sceltaBevanda == "error")
-//     return sceltaBevanda;
+            default:
+                sceltaBevanda = "error" //default per rimanere nel ciclo
+                break;
+        }
+    } while (sceltaBevanda == "error")
+    return sceltaBevanda;
 
-// }
+}
 
 
 
-// let inventario = ["acqua", 10, "coca-cola", 10, "birra", 10] // array contenente tutti i nomi e le quantità a magazzino 
-// while (inventario[1] != 0 || inventario[3] != 0 ||
-//      inventario[5] != 0) {
-//     distributore(inventario);
-//     // alert(`${inventario}`);
-// }
-// alert(`Tutte le bibite sono terminate, ci scusiamo per il disagio`);
+let inventario = ["acqua", 10, "coca-cola", 10, "birra", 10] // array contenente tutti i nomi e le quantità a magazzino 
+while (inventario[1] != 0 || inventario[3] != 0 ||
+     inventario[5] != 0) {
+    distributore(inventario);
+    // alert(`${inventario}`);
+}
+alert(`Tutte le bibite sono terminate, ci scusiamo per il disagio`);
